@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,html --> 
+<meta name="src" content="lecturenotes.tex" /> 
+<link rel="stylesheet" type="text/css" href="lecturenotes.css" /> 
+</head><body 
+>
+                                                                  
+
+                                                                  
+<!--l. 68--><p class="indent" >
+                                                                  
+
+                                                                  
+</p>
+   <h1 class="partHead"><span class="titlemark">Part&#x00A0;I<br /></span><a 
+ id="x1-1000I"></a>Optimal control</h1>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;1</span><br /><a 
+ id="x1-20001"></a>Introduction</h2>
+<!--l. 3--><p class="noindent" >Over the past sixty years, a great body of knowledge has been built up on the subject
+of feedback control systems for linear, time-invariant, single input and single output
+dynamic systems. This knowledge plays an important role in our technology. The
+primary aim of the designer using classical control design methods is to stabilize the
+system/plant, whereas secondary aims may involve obtaining a certain transient
+response, bandwidth, disturbance rejection, steady state error, and robustness to
+plant variations or uncertainties. The designer&#8217;s methods are a combination of
+analytical ones (e.g., Laplace transform, Routh test), graphical ones (e.g.,
+Nyquist plots, Nichols charts), and a good deal of empirically based knowledge
+(e.g., a certain class of compensator works satisfactorily for a certain class of
+plants).
+</p><!--l. 5--><p class="indent" >   For higher-order systems, multiple-input systems, or systems that do not
+possess the properties usually assumed in the classical control approach
+(linear and time invariant), the techniques for analysis and design of linear,
+time-invariant systems are, in general, not applicable to these more complicated
+systems.
+</p><!--l. 7--><p class="indent" >   One of the main aims of modern control is to present solutions to a much wider
+class of control problems than classical control can tackle by providing an array of
+analytical design procedures that facilitate the design task.
+</p><!--l. 9--><p class="indent" >   Optimal control is one particular branch of modem control that sets
+out to design systems that are not supposed merely stable but satisfy, in
+the best possible way, any one of the desirable constraints associated with
+classical control. The problem of optimal control can then be stated as:
+&#8221;Determine the control signals that will cause a system to satisfy the physical
+constraints and, at the same time, minimize (or maximize) some performance
+criterion&#8221;.
+</p><!--l. 11--><p class="indent" >   After more than three hundred years of evolution of calculus of variations,
+optimal control has developed into a well-established research area and finds its
+applications in many scientific fields, ranging from mathematics and engineering to
+biomedical and management sciences. As for modern control theory, despite the
+development of a vast body of knowledge and despite some spectacular applications
+to practical situations, some of the theory has yet to find application, and many
+practical control problems have yet to find a theory that will successfully deal with
+them.
+</p><!--l. 13--><p class="indent" >   In particular, from the theoretical point of view, the existence problem of an
+optimal control has still to be solved for many classes of problems. Note that solving
+this problem is of crucial importance, since it does not make much sense to seek a
+solution if none exists.
+</p><!--l. 15--><p class="indent" >   Another important topic is to actually find an optimal control, i.e., give a &#8217;recipe&#8217;
+for operating the system in such a way that it satisfies the constraints in an optimal
+manner. Such recipe should start from necessary and/or sufficient conditions for
+optimality that are instrumental for identifying a small class of candidates for an
+optimal control. Unfortunately, these conditions are not available for some classes of
+problems.
+</p><!--l. 17--><p class="indent" >   Finally, once a good candidate for an optimal control has been sorted out,
+it has to be computed. As most real-world problems are too complex to
+allow for an analytical solution, computational algorithms are inevitable in
+solving optimal control problems. As a result, several successful families of
+algorithms have been developed over the years. Research is still going on in trying
+                                                                  
+
+                                                                  
+to speed up codes as well as in including special constraints (e.g. integer
+constrains).
+</p>
+   <h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-30001.1"></a>Lecture notes layout</h3>
+<!--l. 21--><p class="noindent" >The course aims at providing the students with all necessary tools for being able to
+apply the theory to practical optimal control design problems.
+</p><!--l. 23--><p class="indent" >   Optimal control design is based on the designer&#8217;s familiarity with the
+engineering situation and understanding of the underlying physics. These allow to
+formulate a relevant mathematical model based on which the optimal control is
+designed.
+</p><!--l. 25--><p class="indent" >   There are four essential steps in an optimal control design: </p>
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmti-10">full-state feedback design </span>where it is assumed that all states are measured
+     and available for feedback;
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">state estimator design </span>where the concern is to estimate values of the states
+     when they cannot all be measured directly, but certain measurements are
+     available;
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">controller reduction </span>where the concern is to approximate a complicated
+     state estimate feedback controller obtained from the above two steps by a
+     simpler one - complication usually being measured by the state dimension;
+     </li>
+     <li class="itemize"><span 
+class="cmti-10">implementation  of  the  controller   </span>where  the  controller  has  to  be
+     approximated in discrete-time to be implemented on physical hardware.</li></ul>
+<!--l. 33--><p class="indent" >   The first part of the course assumes precise knowledge of the structure and
+parameters of the dynamic systems investigated and precise measurements of the
+states for feedback control. In practice, such precise knowledge is seldom available.
+Thus, it is important to be able to deal with random fluctuations in the environment
+and in the measurement system. The second part of the course thus is concerned with
+this topic, starting with a review of the fundamentals of probability and random
+processes and proceeding to the design of the &#8221;best&#8221; control system, on the average,
+using noisy measurements and taking into account random perturbations of the
+system by the environment.
+</p><!--l. 49--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-40001.2"></a>Pre-requisites for the course</h3>
+<!--l. 51--><p class="noindent" >The background assumed of any student is: </p>
+     <ul class="itemize1">
+     <li class="itemize">an elementary introduction to linear algebra.
+     </li>
+     <li class="itemize">an elementary knowledge of mechanics and ordinary differential equations;
+                                                                  
+
+                                                                  
+     </li>
+     <li class="itemize">an elementary control course, covering such notions as transfer functions,
+     Nyquist plots, root locus, etc.;
+     </li>
+     <li class="itemize">an elementary introduction to the state-space description of linear systems
+     and</li></ul>
+<!--l. 59--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x1-50001.3"></a>Final Remarks</h3>
+<!--l. 61--><p class="noindent" >There are tons of books (not to talk about papers) dealing with calculus of
+variations and optimal control design. Although some of them are excellent,
+navigating and combining the material for obtaining an appropriate presentation
+level was definitely not trivial. I hope I did a good job but any suggestion is
+welcomed.
+</p><!--l. 63--><p class="indent" >   The aim was to write lecture notes that were sufficiently self-contained so that
+any motivated student specializing in a technical subject should be able to follow
+them. Depending on the student&#8217;s background, some supplementary reading may be
+necessary from time to time. The references at the end of each chapter should
+facilitate this.
+</p><!--l. 65--><p class="indent" >   The exercises form an integral part of the text. They either illustrate the subject
+matter covered or extend it.
+</p><!--l. 67--><p class="indent" >   Problems at the end of each section are extensions and completions of theoretical
+material. The suggestion is to start working on each problem as soon as the
+corresponding material is covered.
+</p><!--l. 69--><p class="indent" >   Take care that, although great effort has been done in trying to remove errors in
+the text, some may still be present. Please report these errors.
+</p><!--l. 71--><p class="indent" >   Not always are proper references given to sources from which results are taken.
+This does not mean that the results are original. In fact, all results presented in these
+notes (with the exception of some simple examples) were borrowed from the
+literature.
+                                                                  
+
+                                                                  
+</p>
+    
+</body></html> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
