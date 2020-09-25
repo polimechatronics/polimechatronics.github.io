@@ -1,0 +1,320 @@
+htfcss: cmti  font-style: italic;
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbsy font-weight: bold;
+htfcss: cmbsy font-weight: bold;
+htfcss: cmbsy font-weight: bold;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+File: lecturenotes.html
+File: lecturenotes.css
+File: lecturenotes.tmp
+File: lecturenotes2.html
+File: lecturenotes3.html
+Css: p{margin-top:0;margin-bottom:0}
+Css: p.indent{text-indent:0;}
+Css: p + p{margin-top:1em;}
+Css: p + div, p + pre {margin-top:1em;}
+Css: div + p, pre + p {margin-top:1em;}
+Css: a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: math { text-indent: 0em; }
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 0px; margin:0px; }
+Css: .hline td, .cline td{ padding: 0; }
+Css: .hline hr, .cline hr{border:none;border-top:1px solid black;}
+Css: .tabbing-right {text-align:right;}
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: .reversemarginpar{float:left;}
+Css: .equation td{text-align:center; vertical-align:middle; }
+Css: td.eq-no{ width:5%; }
+Css: table.equation { width:100%; } 
+Css: div.math-display, div.par-math-display{text-align:center;}
+Css: mtr.hline mtd{ border-bottom:black solid 1px; padding-top:2px; padding-bottom:0em; }
+Css: mtr.hline mtd mo{ display:none }
+Css: math .texttt { font-family: monospace; }
+Css: math .textit { font-style: italic; }
+Css: math .textsl { font-style: oblique; }
+Css: math .textsf { font-family: sans-serif; }
+Css: math .textbf { font-weight: bold; }
+Css: table.tabular{border-collapse: collapse; border-spacing: 0;}
+Css: mo.MathClass-op + mi{margin-left:0.3em}
+Css: mi + mo.MathClass-op{margin-left:0.3em}
+Css:  math mstyle[mathvariant="bold"] { font-weight: bold; font-style: normal; } 
+Css:  math mstyle[mathvariant="normal"] { font-weight: normal; font-style: normal; } 
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Css: .chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
+Css: .index-item, .index-subitem, .index-subsubitem {display:block}
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: h1.partHead{text-align: center}
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+Css: .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+Css: .quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+Css: .verse{white-space:nowrap; margin-left:2em}
+Css: div.maketitle {text-align:center;}
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; }
+Css: div.author, div.date {text-align:center;}
+Css: div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+Css: div.author{white-space: nowrap;}
+Css: .quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+Css: h1.partHead{text-align: center}
+Css: .abstract p {margin-left:5%; margin-right:5%;}
+Css: div.abstract {width:100%;}
+Css: figure.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: figure.float img, figure.figure img {display: block; margin-left: auto; margin-right: auto;}
+Css: figure.figure > p {text-align:center;}
+Css: figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
+Css: figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: .equation-star td{text-align:center; vertical-align:middle; }
+Css: table.equation-star { width:100%; } 
+Css: mtd.align-odd{margin-left:2em; text-align:right;}
+Css: mtd.align-even{margin-right:2em; text-align:left;}
+Css: .boxed{border: 1px solid black; padding-left:2px; padding-right:2px;}
+Css: .rotatebox{display: inline-block;}
+Css: .mdframed{margin-top:1em;margin-bottom:1em;}
+Css: .epigraph, .epigraphhead, epigraphs {margin-left:60%}
+Css: .epigraphhead .epigraph {margin-left:0%}
+Css: .episource {text-align:right}
+Css: .epigraphs table { width:40% ;}
+Css: .epigraphs table div .episource { text-align:right; width:100%;}
+Css: .MathJax_MathML {text-indent: 0;}
+Css: body { font-family: Minion Pro, Baskerville, Garamond, EB Garamond, Georgia, serif; font-size: 18px; line-height: 1.5; max-width: 40em; margin: auto; }
+Css: .titleHead, .sectionHead, .subsectionHead, .textsf { font-family: Myriad Pro, Helvetica, Arial, sans-serif; }
+Css: .titleHead, .sectionHead, .subsectionHead { color: FireBrick; }
+Css: .texttt, .verb, .pre { font-family: Inconsolata, Consolas, Courier, monospace; }
+Css: .titleHead { font-size: 32px; }
+Css: .sectionHead { font-size: 28px; }
+Css: .subsectionHead { font-size: 24px; }
+Css: .titlemark { display: inline-block; width: 2em; }
+Css: .figure img { display: block; margin: auto; }
+Css: #mdframed-1{border:1px solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-2{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-3{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+File: figures/NLP/convex_set.png
+File: figures/NLP/convex_fun.png
+Css: #mdframed-4{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-5{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-6{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-7{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-8{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-9{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-10{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-11{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-12{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 152 --- needs --- "gs -o figures/NLP/NLP_1.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/NLP_1.eps" ---
+File: figures/NLP/NLP_1.png
+Css: #mdframed-13{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-14{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-15{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-16{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-17{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-18{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-19{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-20{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-21{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-22{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-23{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-24{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-25{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-26{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-27{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-28{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-29{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-30{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-31{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-32{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-33{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-34{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-35{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-36{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-37{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-38{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-39{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 654 --- needs --- "gs -o figures/NLP/NLP_2.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/NLP_2.eps" ---
+File: figures/NLP/NLP_2.png
+Css: #mdframed-40{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 710 --- needs --- "gs -o figures/NLP/saddle_1.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/saddle_1.eps" ---
+File: figures/NLP/saddle_1.png
+l. 712 --- needs --- "gs -o figures/NLP/saddle_2.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/saddle_2.eps" ---
+File: figures/NLP/saddle_2.png
+Css: #mdframed-41{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-42{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-43{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-44{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-45{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 850 --- needs --- "gs -o figures/NLP/convex_q_3d.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/convex_q_3d.eps" ---
+File: figures/NLP/convex_q_3d.png
+l. 852 --- needs --- "gs -o figures/NLP/convex_q_contour.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/convex_q_contour.eps" ---
+File: figures/NLP/convex_q_contour.png
+Css: #mdframed-46{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-47{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-48{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-49{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-50{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-51{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-52{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-53{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-54{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-55{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-56{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-57{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 1147 --- needs --- "gs -o figures/NLP/NLP_3.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/NLP_3.eps" ---
+File: figures/NLP/NLP_3.png
+Css: #mdframed-58{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-59{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-60{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-61{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-62{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-63{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-64{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-65{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-66{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-67{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 1571 --- needs --- "gs -o figures/NLP/NLP_4.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/NLP_4.eps" ---
+File: figures/NLP/NLP_4.png
+Css: #mdframed-68{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-69{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-70{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-71{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-72{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+l. 1830 --- needs --- "gs -o figures/NLP/hilly.png -r150 -sDEVICE=pngalpha -dTextAlphaBits=4 -dGraphicsAlphaBits=4 figures/NLP/hilly.eps" ---
+File: figures/NLP/hilly.png
+Css: #mdframed-73{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-74{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-75{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-76{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-77{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-78{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-79{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-80{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-81{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-82{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-83{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-84{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-85{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-86{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-87{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-88{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+Css: #mdframed-89{border:\mdfl@linewidth  solid #000000; background-color: #FFFFFF; color:#000000;}
+--- characters ---
+Font("cmex","10","10","100")
+Font("cmr","5","5","100")
+Font("cmr","7","7","100")
+Font("cmr","10","10","100")
+Font("cmmi","5","5","100")
+Font("cmmi","7","7","100")
+Font("cmmi","10","10","100")
+Font("cmsy","5","5","100")
+Font("cmsy","7","7","100")
+Font("cmsy","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmbx","7","7","100")
+Font("cmmib","10","10","100")
+Font("cmmib","7","7","100")
+Font("cmbsy","10","10","100")
+Font("cmbsy","7","7","100")
+Font("cmbsy","5","5","100")
+Font("cmex","7","7","100")
+Font("cmex","7","7","71")
+Font("msam","10","10","100")
+Font("msam","7","7","100")
+Font("msam","5","5","100")
+Font("msbm","10","10","100")
+Font("msbm","7","7","100")
+Font("msbm","5","5","100")
+Font("rsfs","10","10","100")
+Font("rsfs","7","7","100")
+Font("cmti","10","10","100")
+Font("cmti","9","9","100")
+Font("cmr","9","9","100")
+Font("cmr","8","8","100")
+Font("cmr","6","6","100")
+Font("cmmi","8","8","100")
+Font("cmmi","6","6","100")
+Font("cmsy","8","8","100")
+Font("cmsy","6","6","100")
+Font("cmex","8","8","100")
+Font("cmbx","8","8","100")
+Font("cmbx","6","6","100")
+Font("msbm","10","10","80")
+Font("cmmib","6","6","100")
+Font("cmmi","9","9","100")
+Font("cmsy","9","9","100")
+Font("cmbx","9","9","100")
+Font("msbm","10","10","90")
+Font("cmmib","9","9","100")
+Font("cmti","8","8","100")

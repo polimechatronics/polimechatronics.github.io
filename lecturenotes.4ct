@@ -1,0 +1,45 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocpart{I}{\csname a:TocLink\endcsname{1}{x1-1000I}{QQ2-1-1}{Optimal control}}{3}\relax 
+\doTocEntry\tocchapter{1}{\csname a:TocLink\endcsname{1}{x1-20001}{QQ2-1-2}{Intro}}{5}\relax 
+\doTocEntry\tocsection{1.1}{\csname a:TocLink\endcsname{1}{x1-30001.1}{QQ2-1-3}{Layout}}{6}\relax 
+\doTocEntry\tocsection{1.2}{\csname a:TocLink\endcsname{1}{x1-40001.2}{QQ2-1-4}{PreReq}}{6}\relax 
+\doTocEntry\tocsection{1.3}{\csname a:TocLink\endcsname{1}{x1-50001.3}{QQ2-1-5}{FinRem}}{7}\relax 
+\doTocEntry\tocchapter{2}{\csname a:TocLink\endcsname{1}{x1-60002}{QQ2-1-6}{Optim}}{10}\relax 
+\doTocEntry\tocsection{2.1}{\csname a:TocLink\endcsname{1}{x1-70002.1}{QQ2-1-7}{nom}}{10}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-7005}{}{\numberline {2.1}{\ignorespaces Illustration of convex set\relax }}}{13}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-7007}{}{\numberline {2.2}{\ignorespaces Illustration of convex function\relax }}}{16}\relax 
+\doTocEntry\tocsection{2.2}{\csname a:TocLink\endcsname{1}{x1-80002.2}{QQ2-1-8}{ProbStat}}{18}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-8007}{}{\numberline {2.3}{\ignorespaces Geometric solution of a nonlinear problem.\relax }}}{22}\relax 
+\doTocEntry\tocsection{2.3}{\csname a:TocLink\endcsname{1}{x1-90002.3}{QQ2-1-9}{DefOptim}}{23}\relax 
+\doTocEntry\tocsubsection{2.3.1}{\csname a:TocLink\endcsname{1}{x1-100002.3.1}{QQ2-1-10}{InfSup}}{23}\relax 
+\doTocEntry\tocsubsection{2.3.2}{\csname a:TocLink\endcsname{1}{x1-110002.3.2}{QQ2-1-11}{MinMax}}{26}\relax 
+\doTocEntry\tocsubsection{2.3.3}{\csname a:TocLink\endcsname{1}{x1-120002.3.3}{QQ2-1-12}{ExisMinMax}}{33}\relax 
+\doTocEntry\tocsection{2.4}{\csname a:TocLink\endcsname{1}{x1-130002.4}{QQ2-1-13}{ConvProg}}{36}\relax 
+\doTocEntry\tocsection{2.5}{\csname a:TocLink\endcsname{1}{x1-140002.5}{QQ2-1-14}{UnconstrProblm}}{39}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-14010}{}{\numberline {2.4}{\ignorespaces Illustration of the objective function and its derivative in Example \let \prOteCt \relax \let \prOteCt \relax \Protect \::ref {ex_2}\relax }}}{47}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-14016}{}{\numberline {2.5}{\ignorespaces Plot and contour plot of saddle point case\relax }}}{52}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-14026}{}{\numberline {2.6}{\ignorespaces Plot and contour plot of convex quadratic function\relax }}}{62}\relax 
+\doTocEntry\tocsection{2.6}{\csname a:TocLink\endcsname{1}{x1-150002.6}{QQ2-1-15}{IneqProblm}}{63}\relax 
+\doTocEntry\tocsubsection{2.6.1}{\csname a:TocLink\endcsname{1}{x1-160002.6.1}{QQ2-1-16}{GeomOptCond}}{63}\relax 
+\doTocEntry\tocsubsection{2.6.2}{\csname a:TocLink\endcsname{1}{x1-170002.6.2}{QQ2-1-17}{KKTCond}}{66}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-17021}{}{\numberline {2.7}{\ignorespaces Solution of Example \let \prOteCt \relax \let \prOteCt \relax \Protect \::ref {ex_2}\relax }}}{80}\relax 
+\doTocEntry\tocsection{2.7}{\csname a:TocLink\endcsname{1}{x1-180002.7}{QQ2-1-18}{ProblmEqConstr}}{83}\relax 
+\doTocEntry\tocsubsection{2.7.1}{\csname a:TocLink\endcsname{1}{x1-190002.7.1}{QQ2-1-19}{ProblmEqConstrPrel}}{83}\relax 
+\doTocEntry\tocsubsection{2.7.2}{\csname a:TocLink\endcsname{1}{x1-200002.7.2}{QQ2-1-20}{ProblmEqConstrLagr}}{86}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-20012}{}{\numberline {2.8}{\ignorespaces Solution of Example \let \prOteCt \relax \let \prOteCt \relax \Protect \::ref {ref_reg}\relax }}}{99}\relax 
+\doTocEntry\toclof{}{\csname a:TocLink\endcsname{1}{x1-20024}{}{\numberline {2.9}{\ignorespaces Mechanical Analogy: The stationarity condition correspond to the force balance $\mathbf@@ {F}+\mathbf@@ {R}_g+\mathbf@@ {R}_h=\mathbf@@ {0}$ (with reversed sign)\relax }}}{117}\relax 
+\doTocEntry\tocsection{2.8}{\csname a:TocLink\endcsname{1}{x1-210002.8}{QQ2-1-21}{GenNLPProblm}}{118}\relax 
+\doTocEntry\tocsubsection{2.8.1}{\csname a:TocLink\endcsname{1}{x1-220002.8.1}{QQ2-1-22}{KKTCondIneqRevis}}{118}\relax 
+\doTocEntry\tocsubsection{2.8.2}{\csname a:TocLink\endcsname{1}{x1-230002.8.2}{QQ2-1-23}{OptimCondGenNLPProb}}{121}\relax 
+\doTocEntry\tocsection{2.9}{\csname a:TocLink\endcsname{1}{x1-240002.9}{QQ2-1-24}{NumMethNLP}}{129}\relax 
+\doTocEntry\tocsubsection{2.9.1}{\csname a:TocLink\endcsname{1}{x1-250002.9.1}{QQ2-1-25}{NumMethNLPPrelim}}{129}\relax 
+\doTocEntry\tocsubsection{2.9.2}{\csname a:TocLink\endcsname{1}{x1-260002.9.2}{QQ2-1-26}{N_alg_nl}}{132}\relax 
+\doTocEntry\tocsubsection{2.9.3}{\csname a:TocLink\endcsname{1}{x1-270002.9.3}{QQ2-1-27}{Unc_optl}}{137}\relax 
+\doTocEntry\tocsubsection{2.9.4}{\csname a:TocLink\endcsname{1}{x1-280002.9.4}{QQ2-1-28}{GlobStratl}}{140}\relax 
+\doTocEntry\tocsubsection{2.9.5}{\csname a:TocLink\endcsname{1}{x1-290002.9.5}{QQ2-1-29}{Rec Updates}}{142}\relax 
+\doTocEntry\tocsubsection{2.9.6}{\csname a:TocLink\endcsname{1}{x1-300002.9.6}{QQ2-1-30}{SumN_alg}}{144}\relax 
+\doTocEntry\tocsubsection{2.9.7}{\csname a:TocLink\endcsname{1}{x1-310002.9.7}{QQ2-1-31}{ConstrNLOPTl}}{146}\relax 
+\doTocEntry\tocsubsection{2.9.8}{\csname a:TocLink\endcsname{1}{x1-320002.9.8}{QQ2-1-32}{PenFunMeth}}{146}\relax 
+\doTocEntry\tocsubsection{2.9.9}{\csname a:TocLink\endcsname{1}{x1-330002.9.9}{QQ2-1-33}{Int-Point Meth}}{152}\relax 
+\doTocEntry\tocsubsection{2.9.10}{\csname a:TocLink\endcsname{1}{x1-340002.9.10}{QQ2-1-34}{SuccQuadProg}}{160}\relax 
+\par 
