@@ -1,0 +1,17 @@
+Introduction
+Nonlinear Programming
+Calculus of Variations
+Optimal Control
+    Euler-Lagrange
+    Linear-Quadratic Regulation
+    Model Predictive Control
+    Numerical Methods
+Estimation
+    Recursive Least-Square
+    Luemberger Filter
+    Kalman Filter
+Smart Materials
+    Linear Constitutive Equations
+    Piezoelectric
+    Magnetostrictive
+    Shape Memory Alloys
