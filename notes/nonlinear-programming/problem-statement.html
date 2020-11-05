@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Notes | Mechatronic Systems and Laboratory</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> -->
+        <link rel="stylesheet" href="../../css/style-w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <!-- for beautifying -->
+        <!-- <link rel="stylesheet" type="text/css" href="site.css" /> -->
+        <style>
+            html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif;}
+            .w3-sidebar {
+                z-index: 3;
+                width: 250px;
+                top: 43px;
+                bottom: 0;
+                height: inherit;
+            }
+            .w3-bar {overflow: visible;}
+        </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+                <a href="../../" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+                <a href="../../laboratory.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Laboratory</a>
+                <a href="../../computer-lab.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Computer Lab</a>
+                <a href="../../theses.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Theses</a>
+                <div class="w3-dropdown-hover">
+                    <a href="../notes.html" class="w3-button w3-hide-small w3-hover-white">Notes</a>
+                    <div id="notes-bar-item" class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="../introduction.html" class="w3-bar-item w3-button">Introduction</a>
+                        <a href="../nonlinear-programming.html" class="w3-bar-item w3-button">Nonlinear Programming</a>
+                        <a href="../calculus-of-variations.html" class="w3-bar-item w3-button">Calculus Of Variations</a>
+                        <a href="../optimal-control.html" class="w3-bar-item w3-button">Optimal Control</a>
+                        <a href="../estimation.html" class="w3-bar-item w3-button">Estimation</a>
+                        <a href="../smart-materials.html" class="w3-bar-item w3-button">Smart Materials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <h4 class="w3-bar-item"><b><a class="chapter-link" href="../nonlinear-programming.html">2 Optimization</a></b></h4>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./notation.html">2.1 Notation and definitions</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./problem-statement.html">2.2 Problem statement</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./definitions.html">2.3 Definitions</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./convex-programming.html">2.4 Convex programming</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./unconstrained-problems.html">2.5 Unconstrained problems</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./inequality-constraints.html">2.6 Inequality constraints</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./equality-constraints.html">2.7 Equality constraints</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./general-nlp-problems.html">2.8 General NLP problems</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./numerical-methods.html">2.9 Numerical methods</a>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor: pointer;" title="close side menu" id="myOverlay"></div>
+
+        <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+        <div class="w3-main" style="margin-left: 250px;">
+
+            <!-- 2.2 Problem statement -->
+            <div class="w3-row w3-padding-64">
+                <a class="anchor-text" id="problem-statement"></a>
+                <div class="w3-twothird w3-container">
+                    <h2 class="w3-text-teal"><span class="titlemark">2.2</span> <a id="x1-80002.2"></a>Problem statement</h2>
+                    <p>We shall consider the following NLP problem: <a id="x1-8001r7"></a></p>
+                    <div class="mdframed" id="mdframed-9">
+                        <p><span class="cmbx-10">Definition</span><span class="cmbx-10">&nbsp;2.7</span></p>
+                        <p>Nonlinear Program</p>
+                        <table class="equation-star">
+                            <tr>
+                                <td>
+                                    <!--l. 93-->
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                                        <mtable align="axis" style equalrows="false" columnlines="none" equalcolumns="false" class="array">
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <munder class="msub">
+                                                        <mrow>
+                                                            <mi class="qopname">
+                                                                min
+                                                            </mi>
+                                                            <mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mstyle mathvariant="bold">
+                                                                <mi>
+                                                                    x
+                                                                </mi>
+                                                            </mstyle>
+                                                        </mrow>
+                                                    </munder>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mi>
+                                                        f
+                                                    </mi>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <mstyle mathvariant="bold">
+                                                                <mi>
+                                                                    x
+                                                                </mi>
+                                                            </mstyle>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <mstyle class="text">
+                                                        <mtext>
+                                                            s.t.
+                                                        </mtext>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mstyle mathvariant="bold">
+                                                        <mi>
+                                                            g
+                                                        </mi>
+                                                    </mstyle>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <mstyle mathvariant="bold">
+                                                                <mi>
+                                                                    x
+                                                                </mi>
+                                                            </mstyle>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                    <mo class="MathClass-rel">
+                                                        ≤
+                                                    </mo>
+                                                    <mstyle mathvariant="bold">
+                                                        <mn>
+                                                            0
+                                                        </mn>
+                                                    </mstyle>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mstyle mathvariant="bold">
+                                                        <mi>
+                                                            h
+                                                        </mi>
+                                                    </mstyle>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <mstyle mathvariant="bold">
+                                                                <mi>
+                                                                    x
+                                                                </mi>
+                                                            </mstyle>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                    <mo class="MathClass-rel">
+                                                        =
+                                                    </mo>
+                                                    <mstyle mathvariant="bold">
+                                                        <mn>
+                                                            0
+                                                        </mn>
+                                                    </mstyle>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mstyle mathvariant="bold">
+                                                        <mi>
+                                                            x
+                                                        </mi>
+                                                    </mstyle>
+                                                    <mo class="MathClass-rel">
+                                                        ∈
+                                                    </mo>
+                                                    <mi>
+                                                        X
+                                                    </mi>
+                                                </mtd>
+                                            </mtr>
+                                            <!--cc-->
+                                        </mtable>
+                                    </math>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>
+                        where
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mi>
+                                X
+                            </mi>
+                        </math>
+                        is a subset of
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <msup>
+                                <mrow>
+                                    <mi>
+                                        ℝ
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mrow>
+                                            <mi>
+                                                n
+                                            </mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mi>
+                                                x
+                                            </mi>
+                                        </mrow>
+                                    </msub>
+                                </mrow>
+                            </msup>
+                        </math>
+                        ,
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mstyle mathvariant="bold">
+                                <mi>
+                                    x
+                                </mi>
+                            </mstyle>
+                        </math>
+                        is a vector of
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <msub>
+                                <mrow>
+                                    <mi>
+                                        n
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mrow>
+                            </msub>
+                        </math>
+                        components
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <msub>
+                                <mrow>
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <mn>
+                                        1
+                                    </mn>
+                                </mrow>
+                            </msub>
+                            <mo class="MathClass-punc">
+                                ,
+                            </mo>
+                            <mo class="MathClass-punc">
+                                .
+                            </mo>
+                            <mo class="MathClass-punc">
+                                .
+                            </mo>
+                            <mo class="MathClass-punc">
+                                .
+                            </mo>
+                            <mo class="MathClass-punc">
+                                ,
+                            </mo>
+                            <msub>
+                                <mrow>
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>
+                                        n
+                                    </mi>
+                                </mrow>
+                            </msub>
+                        </math>
+                        , and
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mi>
+                                f
+                            </mi>
+                            <mo class="MathClass-punc">
+                                :
+                            </mo>
+                            <mi>
+                                X
+                            </mi>
+                            <mo class="MathClass-rel">
+                                →
+                            </mo>
+                            <mi>
+                                ℝ
+                            </mi>
+                        </math>
+                        ,
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mstyle mathvariant="bold">
+                                <mi>
+                                    g
+                                </mi>
+                            </mstyle>
+                            <mo class="MathClass-punc">
+                                :
+                            </mo>
+                            <mi>
+                                X
+                            </mi>
+                            <mo class="MathClass-rel">
+                                →
+                            </mo>
+                            <msup>
+                                <mrow>
+                                    <mi>
+                                        ℝ
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mrow>
+                                            <mi>
+                                                n
+                                            </mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mi>
+                                                g
+                                            </mi>
+                                        </mrow>
+                                    </msub>
+                                </mrow>
+                            </msup>
+                        </math>
+                        and
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mstyle mathvariant="bold">
+                                <mi>
+                                    h
+                                </mi>
+                            </mstyle>
+                            <mo class="MathClass-punc">
+                                :
+                            </mo>
+                            <mi>
+                                X
+                            </mi>
+                            <mo class="MathClass-rel">
+                                →
+                            </mo>
+                            <msup>
+                                <mrow>
+                                    <mi>
+                                        ℝ
+                                    </mi>
+                                </mrow>
+                                <mrow>
+                                    <msub>
+                                        <mrow>
+                                            <mi>
+                                                n
+                                            </mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mi>
+                                                h
+                                            </mi>
+                                        </mrow>
+                                    </msub>
+                                </mrow>
+                            </msup>
+                        </math>
+                        are defined on
+                        <!--l. 104-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mi>
+                                X
+                            </mi>
+                        </math>
+                        . <a id="x1-8002r3"></a>
+                    </p>
+                    <div class="mdframed" id="mdframed-10">
+                        <p><span class="cmbx-10">Remark</span><span class="cmbx-10">&nbsp;2.3</span></p>
+                        <p>
+                            The function
+                            <!--l. 107-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    f
+                                </mi>
+                            </math>
+                            is usually called the <span class="cmti-10">objective function</span> or <span class="cmti-10">criterion function</span> or <span class="cmti-10">performance index</span>. Each of the constraints
+                            <!--l. 107-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            g
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>
+                                            i
+                                        </mi>
+                                    </mrow>
+                                </msub>
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mstyle>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                                <mo class="MathClass-rel">
+                                    ≤
+                                </mo>
+                                <mn>
+                                    0
+                                </mn>
+                            </math>
+                            ,
+                            <!--l. 107-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    i
+                                </mi>
+                                <mo class="MathClass-rel">
+                                    =
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            n
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>
+                                            g
+                                        </mi>
+                                    </mrow>
+                                </msub>
+                            </math>
+                            , is called an <span class="cmti-10">inequality constraint</span>, and each of the constraints
+                            <!--l. 107-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            h
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>
+                                            i
+                                        </mi>
+                                    </mrow>
+                                </msub>
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mstyle>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                                <mo class="MathClass-rel">
+                                    =
+                                </mo>
+                                <mn>
+                                    0
+                                </mn>
+                            </math>
+                            ,
+                            <!--l. 107-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    i
+                                </mi>
+                                <mo class="MathClass-rel">
+                                    =
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    .
+                                </mo>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            n
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>
+                                            h
+                                        </mi>
+                                    </mrow>
+                                </msub>
+                            </math>
+                            , is called an <span class="cmti-10">equality constraint</span>.
+                        </p>
+                    </div>
+                    <a id="x1-8003r4"></a>
+                    <div class="mdframed" id="mdframed-11">
+                        <p><span class="cmbx-10">Remark</span><span class="cmbx-10">&nbsp;2.4</span></p>
+                        <p>
+                            Note also that the set
+                            <!--l. 111-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    X
+                                </mi>
+                            </math>
+                            typically includes lower and upper bounds on the variables. The reason for separating variable bounds from the other inequality constraints is that they can play a useful role in some algorithms, i.e. they are handled in a specific
+                            way.
+                        </p>
+                    </div>
+                    <a id="x1-8004r5"></a>
+                    <div class="mdframed" id="mdframed-12">
+                        <p><span class="cmbx-10">Remark</span><span class="cmbx-10">&nbsp;2.5</span></p>
+                        <p>
+                            A vector
+                            <!--l. 115-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mstyle>
+                                <mo class="MathClass-rel">
+                                    ∈
+                                </mo>
+                                <mi>
+                                    X
+                                </mi>
+                            </math>
+                            satisfying all the constraints is called a <span class="cmti-10">feasible solution</span> to the problem. The collection of all such points forms the <span class="cmti-10">feasible region</span>. The NLP problem, then, is to find a
+                            <span class="cmti-10">feasible point</span>
+                            <!--l. 115-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                    <msup>
+                                        <mrow></mrow>
+                                    </msup>
+                                </mstyle>
+                                <mrow>
+                                    <mo class="MathClass-bin">
+                                        ⋆
+                                    </mo>
+                                </mrow>
+                            </math>
+                            such that
+                            <!--l. 115-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    f
+                                </mi>
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mstyle>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                                <mo class="MathClass-rel">
+                                    ≥
+                                </mo>
+                                <mi>
+                                    f
+                                </mi>
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                    <msup>
+                                        <mrow></mrow>
+                                    </msup>
+                                </mstyle>
+                                <mrow>
+                                    <mo class="MathClass-bin">
+                                        ⋆
+                                    </mo>
+                                </mrow>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                            </math>
+                            for each feasible point
+                            <!--l. 115-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mstyle mathvariant="bold">
+                                    <mi>
+                                        x
+                                    </mi>
+                                </mstyle>
+                            </math>
+                            .
+                        </p>
+                    </div>
+                    <p>
+                        Needless to say, a NLP problem can be stated as a maximization problem, and the inequality constraints can be written in the form
+                        <!--l. 118-->
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                            <mstyle mathvariant="bold">
+                                <mi>
+                                    g
+                                </mi>
+                            </mstyle>
+                            <mo class="MathClass-open">
+                                (
+                            </mo>
+                            <mstyle mathvariant="bold">
+                                <mi>
+                                    x
+                                </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                                )
+                            </mo>
+                            <mo class="MathClass-rel">
+                                ≥
+                            </mo>
+                            <mn>
+                                0
+                            </mn>
+                        </math>
+                        .
+                    </p>
+                    <div class="newtheorem">
+                        <p>
+                            <span class="head"><a id="x1-8005r1"></a> <span class="cmbx-10">Example 2.1.</span></span> <span class="cmti-10">Consider the following problem:</span>
+                        </p>
+                        <table class="equation-star">
+                            <tr>
+                                <td>
+                                    <!--l. 123-->
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                                        <mtable align="axis" style equalrows="false" columnlines="none" equalcolumns="false" class="array">
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <munder class="msub">
+                                                        <mrow>
+                                                            <mi class="qopname">
+                                                                min
+                                                            </mi>
+                                                            <mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mstyle mathvariant="bold">
+                                                                <mi>
+                                                                    x
+                                                                </mi>
+                                                            </mstyle>
+                                                        </mrow>
+                                                    </munder>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <msup>
+                                                        <mrow>
+                                                            <mrow>
+                                                                <mo fence="true" form="prefix">
+                                                                    (
+                                                                </mo>
+                                                                <mrow>
+                                                                    <msub>
+                                                                        <mrow>
+                                                                            <mi>
+                                                                                x
+                                                                            </mi>
+                                                                        </mrow>
+                                                                        <mrow>
+                                                                            <mn>
+                                                                                1
+                                                                            </mn>
+                                                                        </mrow>
+                                                                    </msub>
+                                                                    <mo class="MathClass-bin">
+                                                                        −
+                                                                    </mo>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                                <mo fence="true" form="postfix">
+                                                                    )
+                                                                </mo>
+                                                            </mrow>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msup>
+                                                    <mo class="MathClass-bin">
+                                                        +
+                                                    </mo>
+                                                    <msup>
+                                                        <mrow>
+                                                            <mrow>
+                                                                <mo fence="true" form="prefix">
+                                                                    (
+                                                                </mo>
+                                                                <mrow>
+                                                                    <msub>
+                                                                        <mrow>
+                                                                            <mi>
+                                                                                x
+                                                                            </mi>
+                                                                        </mrow>
+                                                                        <mrow>
+                                                                            <mn>
+                                                                                2
+                                                                            </mn>
+                                                                        </mrow>
+                                                                    </msub>
+                                                                    <mo class="MathClass-bin">
+                                                                        −
+                                                                    </mo>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                                <mo fence="true" form="postfix">
+                                                                    )
+                                                                </mo>
+                                                            </mrow>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msup>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <mstyle class="text">
+                                                        <mtext>
+                                                            s.t.
+                                                        </mtext>
+                                                    </mstyle>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <msubsup>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msubsup>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-rel">
+                                                        ≤
+                                                    </mo>
+                                                    <mn>
+                                                        0
+                                                    </mn>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        +
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <mn>
+                                                        2
+                                                    </mn>
+                                                    <mo class="MathClass-rel">
+                                                        ≤
+                                                    </mo>
+                                                    <mn>
+                                                        0
+                                                    </mn>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center"></mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <mn>
+                                                        1
+                                                    </mn>
+                                                    <mo class="MathClass-rel">
+                                                        ≤
+                                                    </mo>
+                                                    <mn>
+                                                        0
+                                                    </mn>
+                                                </mtd>
+                                            </mtr>
+                                            <!--cc-->
+                                        </mtable>
+                                    </math>
+                                </td>
+                            </tr>
+                        </table>
+                        <p><span class="cmti-10">The objective function and the three inequality constraints are:</span></p>
+                        <table class="equation-star">
+                            <tr>
+                                <td>
+                                    <!--l. 135-->
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                                        <mtable align="axis" style equalrows="false" columnlines="none none" equalcolumns="false" class="array">
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <mi>
+                                                        f
+                                                    </mi>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                            <mo class="MathClass-punc">
+                                                                ,
+                                                            </mo>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mo class="MathClass-rel">
+                                                        =
+                                                    </mo>
+                                                </mtd>
+                                                <mtd class="array" columnalign="left">
+                                                    <msup>
+                                                        <mrow>
+                                                            <mrow>
+                                                                <mo fence="true" form="prefix">
+                                                                    (
+                                                                </mo>
+                                                                <mrow>
+                                                                    <msub>
+                                                                        <mrow>
+                                                                            <mi>
+                                                                                x
+                                                                            </mi>
+                                                                        </mrow>
+                                                                        <mrow>
+                                                                            <mn>
+                                                                                1
+                                                                            </mn>
+                                                                        </mrow>
+                                                                    </msub>
+                                                                    <mo class="MathClass-bin">
+                                                                        −
+                                                                    </mo>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                                <mo fence="true" form="postfix">
+                                                                    )
+                                                                </mo>
+                                                            </mrow>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msup>
+                                                    <mo class="MathClass-bin">
+                                                        +
+                                                    </mo>
+                                                    <msup>
+                                                        <mrow>
+                                                            <mrow>
+                                                                <mo fence="true" form="prefix">
+                                                                    (
+                                                                </mo>
+                                                                <mrow>
+                                                                    <msub>
+                                                                        <mrow>
+                                                                            <mi>
+                                                                                x
+                                                                            </mi>
+                                                                        </mrow>
+                                                                        <mrow>
+                                                                            <mn>
+                                                                                2
+                                                                            </mn>
+                                                                        </mrow>
+                                                                    </msub>
+                                                                    <mo class="MathClass-bin">
+                                                                        −
+                                                                    </mo>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                                <mo fence="true" form="postfix">
+                                                                    )
+                                                                </mo>
+                                                            </mrow>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msup>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                g
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                            <mo class="MathClass-punc">
+                                                                ,
+                                                            </mo>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mo class="MathClass-rel">
+                                                        =
+                                                    </mo>
+                                                </mtd>
+                                                <mtd class="array" columnalign="left">
+                                                    <msubsup>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msubsup>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                g
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                            <mo class="MathClass-punc">
+                                                                ,
+                                                            </mo>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mo class="MathClass-rel">
+                                                        =
+                                                    </mo>
+                                                </mtd>
+                                                <mtd class="array" columnalign="left">
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                2
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        +
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <mn>
+                                                        2
+                                                    </mn>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd class="array" columnalign="center">
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                g
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                3
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mrow>
+                                                        <mo fence="true" form="prefix">
+                                                            (
+                                                        </mo>
+                                                        <mrow>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        1
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                            <mo class="MathClass-punc">
+                                                                ,
+                                                            </mo>
+                                                            <msub>
+                                                                <mrow>
+                                                                    <mi>
+                                                                        x
+                                                                    </mi>
+                                                                </mrow>
+                                                                <mrow>
+                                                                    <mn>
+                                                                        2
+                                                                    </mn>
+                                                                </mrow>
+                                                            </msub>
+                                                        </mrow>
+                                                        <mo fence="true" form="postfix">
+                                                            )
+                                                        </mo>
+                                                    </mrow>
+                                                </mtd>
+                                                <mtd class="array" columnalign="center">
+                                                    <mo class="MathClass-rel">
+                                                        =
+                                                    </mo>
+                                                </mtd>
+                                                <mtd class="array" columnalign="left">
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <msub>
+                                                        <mrow>
+                                                            <mi>
+                                                                x
+                                                            </mi>
+                                                        </mrow>
+                                                        <mrow>
+                                                            <mn>
+                                                                1
+                                                            </mn>
+                                                        </mrow>
+                                                    </msub>
+                                                    <mo class="MathClass-bin">
+                                                        −
+                                                    </mo>
+                                                    <mn>
+                                                        1
+                                                    </mn>
+                                                </mtd>
+                                            </mtr>
+                                            <!--{ccl}-->
+                                        </mtable>
+                                    </math>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span class="cmti-10">Figure</span>
+                            <a href="#x1-8006r3">
+                                <span class="cmti-10">2.3</span>
+                                <!--tex4ht:ref: fig2.1 -->
+                            </a>
+                            <span class="cmti-10">illustrates the feasible region. The problem, then, is to</span> <span class="cmti-10">find a point in the feasible region with the smallest possible value of</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <msup>
+                                    <mrow>
+                                        <mo class="MathClass-open">
+                                            (
+                                        </mo>
+                                        <msub>
+                                            <mrow>
+                                                <mi>
+                                                    x
+                                                </mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mn>
+                                                    1
+                                                </mn>
+                                            </mrow>
+                                        </msub>
+                                        <mo class="MathClass-bin">
+                                            −
+                                        </mo>
+                                        <mn>
+                                            2
+                                        </mn>
+                                        <mo class="MathClass-close">
+                                            )
+                                        </mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            2
+                                        </mn>
+                                    </mrow>
+                                </msup>
+                                <mo class="MathClass-bin">
+                                    +
+                                </mo>
+                                <msup>
+                                    <mrow>
+                                        <mo class="MathClass-open">
+                                            (
+                                        </mo>
+                                        <msub>
+                                            <mrow>
+                                                <mi>
+                                                    x
+                                                </mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mn>
+                                                    2
+                                                </mn>
+                                            </mrow>
+                                        </msub>
+                                        <mo class="MathClass-bin">
+                                            −
+                                        </mo>
+                                        <mn>
+                                            1
+                                        </mn>
+                                        <mo class="MathClass-close">
+                                            )
+                                        </mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            2
+                                        </mn>
+                                    </mrow>
+                                </msup>
+                            </math>
+                            <span class="cmti-10">. Note that</span> <span class="cmti-10">points</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            x
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            1
+                                        </mn>
+                                    </mrow>
+                                </msub>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <msub>
+                                    <mrow>
+                                        <mi>
+                                            x
+                                        </mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            2
+                                        </mn>
+                                    </mrow>
+                                </msub>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                            </math>
+                            <span class="cmti-10">with</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <msup>
+                                    <mrow>
+                                        <mo class="MathClass-open">
+                                            (
+                                        </mo>
+                                        <msub>
+                                            <mrow>
+                                                <mi>
+                                                    x
+                                                </mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mn>
+                                                    1
+                                                </mn>
+                                            </mrow>
+                                        </msub>
+                                        <mo class="MathClass-bin">
+                                            −
+                                        </mo>
+                                        <mn>
+                                            2
+                                        </mn>
+                                        <mo class="MathClass-close">
+                                            )
+                                        </mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            2
+                                        </mn>
+                                    </mrow>
+                                </msup>
+                                <mo class="MathClass-bin">
+                                    +
+                                </mo>
+                                <msup>
+                                    <mrow>
+                                        <mo class="MathClass-open">
+                                            (
+                                        </mo>
+                                        <msub>
+                                            <mrow>
+                                                <mi>
+                                                    x
+                                                </mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mn>
+                                                    2
+                                                </mn>
+                                            </mrow>
+                                        </msub>
+                                        <mo class="MathClass-bin">
+                                            −
+                                        </mo>
+                                        <mn>
+                                            1
+                                        </mn>
+                                        <mo class="MathClass-close">
+                                            )
+                                        </mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>
+                                            2
+                                        </mn>
+                                    </mrow>
+                                </msup>
+                                <mo class="MathClass-rel">
+                                    =
+                                </mo>
+                                <mi>
+                                    c
+                                </mi>
+                            </math>
+                            <span class="cmti-10">are circles</span> <span class="cmti-10">with radius</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    c
+                                </mi>
+                            </math>
+                            <span class="cmti-10">and centre</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mn>
+                                    2
+                                </mn>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                            </math>
+                            <span class="cmti-10">.</span> <span class="cmti-10">This circle is called the contour of the objective function having the value</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    c
+                                </mi>
+                            </math>
+                            <span class="cmti-10">. In order to</span> <span class="cmti-10">minimize</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    c
+                                </mi>
+                            </math>
+                            <span class="cmti-10">,</span> <span class="cmti-10">we must find the circle with the smallest radius that intersects the</span> <span class="cmti-10">feasible region. As shown in figure</span>
+                            <a href="#x1-8006r3">
+                                <span class="cmti-10">2.3</span>
+                                <!--tex4ht:ref: fig2.1 -->
+                            </a>
+                            <span class="cmti-10">, the smallest circle corresponds to</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mi>
+                                    c
+                                </mi>
+                                <mo class="MathClass-rel">
+                                    =
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                            </math>
+                            <span class="cmti-10">and intersects the feasible</span> <span class="cmti-10">region at the point</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                            </math>
+                            <span class="cmti-10">.</span> <span class="cmti-10">Hence, the optimal solution occurs at the point</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mo class="MathClass-open">
+                                    (
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-punc">
+                                    ,
+                                </mo>
+                                <mn>
+                                    1
+                                </mn>
+                                <mo class="MathClass-close">
+                                    )
+                                </mo>
+                            </math>
+                            <span class="cmti-10">and has an objective</span> <span class="cmti-10">value equal to</span>
+                            <!--l. 144-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                                <mn>
+                                    1
+                                </mn>
+                            </math>
+                            <span class="cmti-10">.</span>
+                        </p>
+                    </div>
+                    <p>
+                        The graphical approach used in the above example, i.e. find an optimal solution by determining the objective contour with the smallest objective value that intersects the feasible region, is only suitable for small problems. It becomes
+                        intractable for problems containing contours of the objective function in more than three variables as well as for problems having complicated objective and/or constraint functions.
+                    </p>
+                    <figure class="figure">
+                        <p><img src="figures/NLP/NLP_1.png" alt="pict" /> <a id="x1-8006r3"></a> <a id="x1-8007"></a></p>
+                        <figcaption class="caption"><span class="id">Figure&nbsp;2.3::</span> <span class="content">Geometric solution of a nonlinear problem.</span></figcaption>
+                        <!--tex4ht:label?: x1-8006r2.2 -->
+                    </figure>
+                    <p>This chapter is organized as follows:</p>
+                    <ul class="itemize1">
+                        <li class="itemize">we start by defining what is meant by optimality and give conditions under which a minimum (or a maximum) exists for a nonlinear program;</li>
+                        <li class="itemize">then, we discuss the special properties of convex programs;</li>
+                        <li class="itemize">then, both necessary and sufficient conditions of optimality are presented for NLP problems;</li>
+                        <li class="itemize">successively, we consider unconstrained problems, problems with inequality constraints, and problems with both equality and inequality constraints;</li>
+                        <li class="itemize">finally, several numerical optimization techniques will be presented, which are instrumental to solve a great variety of NLP problems.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <footer class="fixed-bottom-footer">
+                <div class="w3-container w3-theme-l1">
+                    <p>&copy; Copyright 2020 <a href="https://polimechatronics.github.io/" target="_blank">Mechatronic Systems and Laboratory</a> course at <a href="https://polimi.it/" target="_blank">Politecnico di Milano</a></p>
+                </div>
+            </footer>
+
+            <!-- END MAIN -->
+        </div>
+
+        <script src="https://hypothes.is/embed.js" async></script>
+
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <script>
+            // Get the Sidebar
+            var mySidebar = document.getElementById("mySidebar");
+
+            // Get the DIV with overlay effect
+            var overlayBg = document.getElementById("myOverlay");
+
+            // Toggle between showing and hiding the sidebar, and add overlay effect
+            function w3_open() {
+                if (mySidebar.style.display === "block") {
+                    mySidebar.style.display = "none";
+                    overlayBg.style.display = "none";
+                } else {
+                    mySidebar.style.display = "block";
+                    overlayBg.style.display = "block";
+                }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+                overlayBg.style.display = "none";
+            }
+        </script>
+    </body>
+</html>

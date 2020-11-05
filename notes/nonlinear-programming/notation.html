@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Notes | Mechatronic Systems and Laboratory</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> -->
+        <link rel="stylesheet" href="../../css/style-w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <!-- for beautifying -->
+        <!-- <link rel="stylesheet" type="text/css" href="site.css" /> -->
+        <style>
+            html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif;}
+            .w3-sidebar {
+                z-index: 3;
+                width: 250px;
+                top: 43px;
+                bottom: 0;
+                height: inherit;
+            }
+            .w3-bar {overflow: visible;}
+        </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+                <a href="../../" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+                <a href="../../laboratory.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Laboratory</a>
+                <a href="../../computer-lab.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Computer Lab</a>
+                <a href="../../theses.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Theses</a>
+                <div class="w3-dropdown-hover">
+                    <a href="../notes.html" class="w3-button w3-hide-small w3-hover-white">Notes</a>
+                    <div id="notes-bar-item" class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="../introduction.html" class="w3-bar-item w3-button">Introduction</a>
+                        <a href="../nonlinear-programming.html" class="w3-bar-item w3-button">Nonlinear Programming</a>
+                        <a href="../calculus-of-variations.html" class="w3-bar-item w3-button">Calculus Of Variations</a>
+                        <a href="../optimal-control.html" class="w3-bar-item w3-button">Optimal Control</a>
+                        <a href="../estimation.html" class="w3-bar-item w3-button">Estimation</a>
+                        <a href="../smart-materials.html" class="w3-bar-item w3-button">Smart Materials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <h4 class="w3-bar-item"><b><a class="chapter-link" href="../nonlinear-programming.html">2 Optimization</a></b></h4>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./notation.html">2.1 Notation and definitions</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./problem-statement.html">2.2 Problem statement</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./definitions.html">2.3 Definitions</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./convex-programming.html">2.4 Convex programming</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./unconstrained-problems.html">2.5 Unconstrained problems</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./inequality-constraints.html">2.6 Inequality constraints</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./equality-constraints.html">2.7 Equality constraints</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./general-nlp-problems.html">2.8 General NLP problems</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./numerical-methods.html">2.9 Numerical methods</a>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor: pointer;" title="close side menu" id="myOverlay"></div>
+
+        <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+        <div class="w3-main" style="margin-left: 250px;">
+
+            <!-- 2.1 Mathematical notation and useful definitions -->
+            <div class="w3-row w3-padding-64">
+                <a class="anchor-text" id="notation-and-definitions"></a>
+                <div class="w3-twothird w3-container">
+                    <h2 class="w3-text-teal"><span class="titlemark">2.1</span> <a id="x1-30001.1"></a>Mathematical notation and useful definitions</h2>
+                    <p>We start by recalling some useful mathematical definition that will be used in the following. <a id="x1-7001r1"></a></p>
+                    <div class="mdframed" id="mdframed-1">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.1:</span> <span class="cmbx-10">Convex</span> <span class="cmbx-10">Set</span></p>
+                    <p>A set <!--l. 21-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        X
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ⊂
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math> is said to be convex if <!--l. 21-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        α
+                    </mi>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-bin">
+                        +
+                    </mo>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mn>
+                        1
+                    </mn>
+                    <mo class="MathClass-bin">
+                        −
+                    </mo>
+                    <mi>
+                        α
+                    </mi>
+                    <mo class="MathClass-close">
+                        )
+                    </mo>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        y
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <mi>
+                        X
+                    </mi>
+                    <mspace width="1em" class="quad"></mspace>
+                    <mi class="MathClass-op">
+                        ∀
+                    </mi>
+                    <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                    </mo>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-punc">
+                        ,
+                    </mo>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        y
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <mi>
+                        X
+                    </mi>
+                    <mspace width="1em" class="quad"></mspace>
+                    <mi>
+                        α
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <mo class="MathClass-open">
+                        [
+                    </mo>
+                    <mn>
+                        0
+                    </mn>
+                    <mo class="MathClass-punc">
+                        ,
+                    </mo>
+                    <mn>
+                        1
+                    </mn>
+                    <mo class="MathClass-close">
+                        ]
+                    </mo></math></p>
+                    </div>
+                    <p>Gemotrically convexity of a set means that every line segment joining two elements of the set belongs to the set <a id="x1-7002r2"></a></p>
+                    <div class="mdframed" id="mdframed-2">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.2:</span> <span class="cmbx-10">Convex</span> <span class="cmbx-10">Function</span></p>
+                    <p>A function <!--l. 26-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        f
+                    </mi>
+                    <mo class="MathClass-punc">
+                        :
+                    </mo>
+                    <mi>
+                        X
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ⊂
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup>
+                    <mo class="MathClass-rel">
+                        →
+                    </mo>
+                    <mi>
+                        ℝ
+                    </mi></math> is convex if <!--l. 26-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        X
+                    </mi></math> is <span class="cmti-10">convex</span> and holds that:</p>
+                    <table class="equation-star">
+                        <tr>
+                        <td>
+                            <!--l. 27-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-bin">
+                            +
+                            </mo>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-bin">
+                            −
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mo class="MathClass-rel">
+                            ≤
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mo class="MathClass-bin">
+                            +
+                            </mo>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-bin">
+                            −
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi class="MathClass-op">
+                            ∀
+                            </mi>
+                            <mo>
+                            &ApplyFunction;<!--FUNCTION APPLICATION-->
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-punc">
+                            ,
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <mi>
+                            X
+                            </mi>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <mo class="MathClass-open">
+                            [
+                            </mo>
+                            <mn>
+                            0
+                            </mn>
+                            <mo class="MathClass-punc">
+                            ,
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-close">
+                            ]
+                            </mo></math>
+                        </td>
+                        </tr>
+                    </table>
+                    </div><a id="x1-7003r1"></a>
+                    <div class="mdframed" id="mdframed-3">
+                    <p><span class="cmbx-10">Remark</span> <span class="cmbx-10">2.1</span></p>
+                    <p>A function is said <span class="cmti-10">strictly</span> convex if the convexity condition holds with strict inequality, that is :</p>
+                    <table class="equation-star">
+                        <tr>
+                        <td>
+                            <!--l. 33-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-bin">
+                            +
+                            </mo>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-bin">
+                            −
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mo class="MathClass-rel">
+                            &#x003C;
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mo class="MathClass-bin">
+                            +
+                            </mo>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-bin">
+                            −
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi class="MathClass-op">
+                            ∀
+                            </mi>
+                            <mo>
+                            &ApplyFunction;<!--FUNCTION APPLICATION-->
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-punc">
+                            ,
+                            </mo>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                y
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <mi>
+                            X
+                            </mi>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <mo class="MathClass-open">
+                            [
+                            </mo>
+                            <mn>
+                            0
+                            </mn>
+                            <mo class="MathClass-punc">
+                            ,
+                            </mo>
+                            <mn>
+                            1
+                            </mn>
+                            <mo class="MathClass-close">
+                            ]
+                            </mo></math>
+                        </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <p>Geometrically it means that the line segment joining <!--l. 37-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mstyle mathvariant="bold">
+                    <mi>
+                        x
+                    </mi>
+                    </mstyle>
+                    <mo class="MathClass-punc">
+                    ,
+                    </mo>
+                    <mi>
+                    f
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mstyle mathvariant="bold">
+                    <mi>
+                        x
+                    </mi>
+                    </mstyle>
+                    <mo class="MathClass-close">
+                    )
+                    </mo>
+                    <mo class="MathClass-close">
+                    )
+                    </mo></math> and <!--l. 37-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mstyle mathvariant="bold">
+                    <mi>
+                        y
+                    </mi>
+                    </mstyle>
+                    <mo class="MathClass-punc">
+                    ,
+                    </mo>
+                    <mi>
+                    f
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mstyle mathvariant="bold">
+                    <mi>
+                        y
+                    </mi>
+                    </mstyle>
+                    <mo class="MathClass-close">
+                    )
+                    </mo>
+                    <mo class="MathClass-close">
+                    )
+                    </mo></math> lies above f. Figures <a href="#x1-7004r1">2.1<!--tex4ht:ref: fig_convex_set --></a> , <a href="#x1-7006r2">2.2<!--tex4ht:ref: fig_convex_fun --></a> illustrate the previous definitions.</p>
+                    <figure class="figure">
+                    <p><img src="figures/NLP/convex_set.png" alt="PIC" width="207" height="207"> <a id="x1-7004r1"></a> <a id="x1-7005"></a></p>
+                    <figcaption class="caption">
+                        <span class="id">Figure 2.1::</span> <span class="content">Illustration of convex set</span>
+                    </figcaption><!--tex4ht:label?: x1-7004r2.1 -->
+                    </figure>
+                    <figure class="figure">
+                    <p><img src="figures/NLP/convex_fun.png" alt="PIC" width="207" height="207"> <a id="x1-7006r2"></a> <a id="x1-7007"></a></p>
+                    <figcaption class="caption">
+                        <span class="id">Figure 2.2::</span> <span class="content">Illustration of convex function</span>
+                    </figcaption><!--tex4ht:label?: x1-7006r2.1 -->
+                    </figure><a id="x1-7008r3"></a>
+                    <div class="mdframed" id="mdframed-4">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.3:</span> <span class="cmbx-10">Cone,</span> <span class="cmbx-10">Convex</span> <span class="cmbx-10">Cone</span></p>
+                    <p>A nonempty set <!--l. 55-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        C
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ⊂
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math> is said to be a <span class="cmti-10">cone</span> if, for every point <!--l. 55-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <mi>
+                        C
+                    </mi></math> ,</p>
+                    <table class="equation-star">
+                        <tr>
+                        <td>
+                            <!--l. 57-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                            <mi>
+                            α
+                            </mi>
+                            <mstyle mathvariant="bold">
+                            <mi>
+                                x
+                            </mi>
+                            </mstyle>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <mi>
+                            C
+                            </mi>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi class="MathClass-op">
+                            ∀
+                            </mi>
+                            <mo>
+                            &ApplyFunction;<!--FUNCTION APPLICATION-->
+                            </mo>
+                            <mi>
+                            α
+                            </mi>
+                            <mo class="MathClass-rel">
+                            ≥
+                            </mo>
+                            <mn>
+                            0
+                            </mn></math>
+                        </td>
+                        </tr>
+                    </table>
+                    <p>If, in addition, <!--l. 61-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        C
+                    </mi></math> is convex then it is said to be a <span class="cmti-10">convex cone</span>.</p>
+                    </div><a id="x1-7009r4"></a>
+                    <div class="mdframed" id="mdframed-5">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.4:</span> <span class="cmbx-10">Positive</span> <span class="cmbx-10">definite</span> <span class="cmbx-10">matrix</span></p>
+                    <p>A <span class="cmti-10">symmetric</span> square matrix <!--l. 67-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        A
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math> is said to be positive definite if <!--l. 67-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                        <msup>
+                        <mrow></mrow>
+                        </msup>
+                    </mstyle>
+                    <mrow>
+                        <mi class="MathClass-op">
+                        ⊤
+                        </mi>
+                        <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                        </mo>
+                    </mrow>
+                    <mi>
+                        A
+                    </mi>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        &#x003E;
+                    </mo>
+                    <mn>
+                        0
+                    </mn>
+                    <mspace width="0.3em" class="thinspace"></mspace>
+                    <mspace width="0.3em" class="thinspace"></mspace>
+                    <mi class="MathClass-op">
+                        ∀
+                    </mi>
+                    <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                    </mo>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math></p>
+                    </div><a id="x1-7010r2"></a>
+                    <div class="mdframed" id="mdframed-6">
+                    <p><span class="cmbx-10">Remark</span> <span class="cmbx-10">2.2</span></p>
+                    <p>Equivalently, positive definiteness implies that all the eigenvalues are positive. In the same way we define semi-positive definite matrices. A <span class="cmti-10">symmetric</span> square matrix <!--l. 70-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        A
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math> is said to be positive definite if <!--l. 70-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                        <msup>
+                        <mrow></mrow>
+                        </msup>
+                    </mstyle>
+                    <mrow>
+                        <mi class="MathClass-op">
+                        ⊤
+                        </mi>
+                        <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                        </mo>
+                    </mrow>
+                    <mi>
+                        A
+                    </mi>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ≥
+                    </mo>
+                    <mn>
+                        0
+                    </mn>
+                    <mspace width="0.3em" class="thinspace"></mspace>
+                    <mspace width="0.3em" class="thinspace"></mspace>
+                    <mi class="MathClass-op">
+                        ∀
+                    </mi>
+                    <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                    </mo>
+                    <mstyle mathvariant="bold">
+                        <mi>
+                        x
+                        </mi>
+                    </mstyle>
+                    <mo class="MathClass-rel">
+                        ∈
+                    </mo>
+                    <msup>
+                        <mrow>
+                        <mi>
+                            ℝ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            n
+                        </mi>
+                        </mrow>
+                    </msup></math> . To denote positive and semi-positive definite matrices we use the symbol <!--l. 70-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        A
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ≻
+                    </mo>
+                    <mn>
+                        0
+                    </mn></math> and <!--l. 70-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        A
+                    </mi>
+                    <mo class="MathClass-rel">
+                        ≽
+                    </mo>
+                    <mn>
+                        0
+                    </mn></math> respectively. If a symmetric matrix has both positive and negative eigenvalues is said to be <span class="cmti-10">indefinite</span>.</p>
+                    </div><a id="x1-7011r5"></a>
+                    <div class="mdframed" id="mdframed-7">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.5:</span> <span class="cmbx-10">small</span> <span class="cmbx-10">o</span></p>
+                    <p>For a function<!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        f
+                    </mi>
+                    <mo class="MathClass-punc">
+                        :
+                    </mo>
+                    <mi>
+                        ℝ
+                    </mi>
+                    <mo class="MathClass-rel">
+                        →
+                    </mo>
+                    <mi>
+                        ℝ
+                    </mi></math> we write <!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        f
+                    </mi>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mi>
+                        x
+                    </mi>
+                    <mo class="MathClass-close">
+                        )
+                    </mo>
+                    <mo class="MathClass-rel">
+                        =
+                    </mo>
+                    <mi>
+                        o
+                    </mi>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mi>
+                        g
+                    </mi>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mi>
+                        x
+                    </mi>
+                    <mo class="MathClass-close">
+                        )
+                    </mo>
+                    <mo class="MathClass-close">
+                        )
+                    </mo></math> if and only if there exists a neighbourhood of <!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mn>
+                        0
+                    </mn></math> (i.e. <!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <msub>
+                        <mrow>
+                        <mi mathvariant="bold-script">
+                            ℬ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            𝜖
+                        </mi>
+                        </mrow>
+                    </msub>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mn>
+                        0
+                    </mn>
+                    <mo class="MathClass-close">
+                        )
+                    </mo></math> ) and a function <!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                        c
+                    </mi>
+                    <mo class="MathClass-punc">
+                        :
+                    </mo>
+                    <msub>
+                        <mrow>
+                        <mi mathvariant="bold-script">
+                            ℬ
+                        </mi>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            𝜖
+                        </mi>
+                        </mrow>
+                    </msub>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mn>
+                        0
+                    </mn>
+                    <mo class="MathClass-close">
+                        )
+                    </mo>
+                    <mo class="MathClass-rel">
+                        →
+                    </mo>
+                    <mi>
+                        ℝ
+                    </mi></math> with <!--l. 74-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <munder class="msub">
+                        <mrow>
+                        <mi class="qopname">
+                            lim
+                        </mi>
+                        <mo>
+                            &ApplyFunction;<!--FUNCTION APPLICATION-->
+                        </mo>
+                        </mrow>
+                        <mrow>
+                        <mi>
+                            x
+                        </mi>
+                        <mo class="MathClass-rel">
+                            →
+                        </mo>
+                        <mn>
+                            0
+                        </mn>
+                        </mrow>
+                    </munder>
+                    <mi>
+                        c
+                    </mi>
+                    <mo class="MathClass-open">
+                        (
+                    </mo>
+                    <mi>
+                        x
+                    </mi>
+                    <mo class="MathClass-close">
+                        )
+                    </mo>
+                    <mo class="MathClass-rel">
+                        =
+                    </mo>
+                    <mn>
+                        0
+                    </mn></math> such that:</p>
+                    <table class="equation-star">
+                        <tr>
+                        <td>
+                            <!--l. 75-->
+                            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="equation">
+                            <mo class="MathClass-rel">
+                            |
+                            </mo>
+                            <mi>
+                            f
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mi>
+                            x
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mo class="MathClass-rel">
+                            |
+                            </mo>
+                            <mo class="MathClass-rel">
+                            ≤
+                            </mo>
+                            <mi>
+                            c
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mi>
+                            x
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mi>
+                            g
+                            </mi>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mi>
+                            x
+                            </mi>
+                            <mo class="MathClass-close">
+                            )
+                            </mo>
+                            <mspace width="1em" class="quad"></mspace>
+                            <mi class="MathClass-op">
+                            ∀
+                            </mi>
+                            <mo>
+                            &ApplyFunction;<!--FUNCTION APPLICATION-->
+                            </mo>
+                            <mi>
+                            x
+                            </mi>
+                            <mo class="MathClass-rel">
+                            ∈
+                            </mo>
+                            <msub>
+                            <mrow>
+                                <mi mathvariant="bold-script">
+                                ℬ
+                                </mi>
+                            </mrow>
+                            <mrow>
+                                <mi>
+                                𝜖
+                                </mi>
+                            </mrow>
+                            </msub>
+                            <mo class="MathClass-open">
+                            (
+                            </mo>
+                            <mn>
+                            0
+                            </mn>
+                            <mo class="MathClass-close">
+                            )
+                            </mo></math>
+                        </td>
+                        </tr>
+                    </table>
+                    </div>
+                    <p>Practically it means that if <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                    f
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mi>
+                    x
+                    </mi>
+                    <mo class="MathClass-close">
+                    )
+                    </mo>
+                    <mo class="MathClass-rel">
+                    =
+                    </mo>
+                    <mi>
+                    o
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mi>
+                    g
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mi>
+                    x
+                    </mi>
+                    <mo class="MathClass-close">
+                    )
+                    </mo>
+                    <mo class="MathClass-close">
+                    )
+                    </mo></math> then <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                    f
+                    </mi></math> shrinks faster than <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                    g
+                    </mi></math> as <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <mi>
+                    x
+                    </mi></math> goes to zero. For example <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <msup>
+                    <mrow>
+                        <mi>
+                        x
+                        </mi>
+                    </mrow>
+                    <mrow>
+                        <mn>
+                        2
+                        </mn>
+                    </mrow>
+                    </msup>
+                    <mo class="MathClass-rel">
+                    =
+                    </mo>
+                    <mi>
+                    o
+                    </mi>
+                    <mo class="MathClass-open">
+                    (
+                    </mo>
+                    <mi>
+                    x
+                    </mi>
+                    <mo class="MathClass-close">
+                    )
+                    </mo></math> . Note that from the definition we also have that <!--l. 79-->
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                    <munder class="msub">
+                    <mrow>
+                        <mi class="qopname">
+                        lim
+                        </mi>
+                        <mo>
+                        &ApplyFunction;<!--FUNCTION APPLICATION-->
+                        </mo>
+                    </mrow>
+                    <mrow>
+                        <mi>
+                        x
+                        </mi>
+                        <mo class="MathClass-rel">
+                        →
+                        </mo>
+                        <mn>
+                        0
+                        </mn>
+                    </mrow>
+                    </munder>
+                    <mfrac>
+                    <mrow>
+                        <mi>
+                        o
+                        </mi>
+                        <mo class="MathClass-open">
+                        (
+                        </mo>
+                        <mi>
+                        g
+                        </mi>
+                        <mo class="MathClass-open">
+                        (
+                        </mo>
+                        <mi>
+                        x
+                        </mi>
+                        <mo class="MathClass-close">
+                        )
+                        </mo>
+                        <mo class="MathClass-close">
+                        )
+                        </mo>
+                    </mrow>
+                    <mrow>
+                        <mi>
+                        g
+                        </mi>
+                        <mo class="MathClass-open">
+                        (
+                        </mo>
+                        <mi>
+                        x
+                        </mi>
+                        <mo class="MathClass-close">
+                        )
+                        </mo>
+                    </mrow>
+                    </mfrac>
+                    <mo class="MathClass-rel">
+                    =
+                    </mo>
+                    <mn>
+                    0
+                    </mn></math> <a id="x1-7012r6"></a></p>
+                    <div class="mdframed" id="mdframed-8">
+                    <p><span class="cmbx-10">Definition</span> <span class="cmbx-10">2.6</span></p>
+                    <p>Matrix norm</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="fixed-bottom-footer">
+                <div class="w3-container w3-theme-l1">
+                    <p>&copy; Copyright 2020 <a href="https://polimechatronics.github.io/" target="_blank">Mechatronic Systems and Laboratory</a> course at <a href="https://polimi.it/" target="_blank">Politecnico di Milano</a></p>
+                </div>
+            </footer>
+
+            <!-- END MAIN -->
+        </div>
+
+        <script src="https://hypothes.is/embed.js" async></script>
+
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <script>
+            // Get the Sidebar
+            var mySidebar = document.getElementById("mySidebar");
+
+            // Get the DIV with overlay effect
+            var overlayBg = document.getElementById("myOverlay");
+
+            // Toggle between showing and hiding the sidebar, and add overlay effect
+            function w3_open() {
+                if (mySidebar.style.display === "block") {
+                    mySidebar.style.display = "none";
+                    overlayBg.style.display = "none";
+                } else {
+                    mySidebar.style.display = "block";
+                    overlayBg.style.display = "block";
+                }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+                overlayBg.style.display = "none";
+            }
+        </script>
+    </body>
+</html>
