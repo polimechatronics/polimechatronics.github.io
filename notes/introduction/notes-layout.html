@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Notes | Mechatronic Systems and Laboratory</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> -->
+        <link rel="stylesheet" href="../../css/style-w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <!-- for beautifying -->
+        <!-- <link rel="stylesheet" type="text/css" href="site.css" /> -->
+        
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+        <style>
+            html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif;}
+            .w3-sidebar {
+                z-index: 3;
+                width: 250px;
+                top: 43px;
+                bottom: 0;
+                height: inherit;
+            }
+            .w3-bar {overflow: visible;}
+        </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+                <a href="../../" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+                <a href="../../laboratory.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Laboratory</a>
+                <a href="../../computer-lab.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Computer Lab</a>
+                <a href="../../theses.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Theses</a>
+                <div class="w3-dropdown-hover">
+                    <a href="../../notes.html" class="w3-button w3-hide-small w3-hover-white">Notes</a>
+                    <div id="notes-bar-item" class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="../introduction.html" class="w3-bar-item w3-button">Introduction</a>
+                        <a href="../nonlinear-programming.html" class="w3-bar-item w3-button">Nonlinear Programming</a>
+                        <a href="../calculus-of-variations.html" class="w3-bar-item w3-button">Calculus Of Variations</a>
+                        <a href="../optimal-control.html" class="w3-bar-item w3-button">Optimal Control</a>
+                        <a href="../estimation.html" class="w3-bar-item w3-button">Estimation</a>
+                        <a href="../smart-materials.html" class="w3-bar-item w3-button">Smart Materials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <h4 class="w3-bar-item"><b><a class="chapter-link" href="../introduction.html">1 Introduction</a></b></h4>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./notes-layout.html">1.1 Notes layout</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./pre-requisites.html">1.2 Pre-requisites</a>
+            <a class="w3-bar-item w3-button w3-hover-black" href="./final-remarks.html">1.3 Final remarks</a>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor: pointer;" title="close side menu" id="myOverlay"></div>
+
+        <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+        <div class="w3-main" style="margin-left: 250px;">
+
+            <!-- 1.1 Lecture notes layout -->
+            <div class="w3-row w3-padding-64">
+                <a class="anchor-text" id="notes-layout"></a>
+                <div class="w3-twothird w3-container">
+                    <h2 class="w3-text-teal"><span class="titlemark">1.1 </span> <a id="x1-30001.1"></a>Lecture notes layout</h2>
+                    <p>The course aims at providing the students with all necessary tools for being able to apply the theory to practical optimal control design problems.</p>
+                    <p>
+                        Optimal control design is based on the designer’s familiarity with the engineering situation and understanding of the underlying physics. These allow to formulate a relevant mathematical model based on which the optimal control is
+                        designed.
+                    </p>
+                    <p>There are four essential steps in an optimal control design:</p>
+
+                    <ul class="itemize1">
+                        <li class="itemize"><span class="cmti-10">full-state feedback design </span>where it is assumed that all states are measured and available for feedback;</li>
+                        <li class="itemize"><span class="cmti-10">state estimator design </span>where the concern is to estimate values of the states when they cannot all be measured directly, but certain measurements are available;</li>
+                        <li class="itemize">
+                            <span class="cmti-10">controller reduction </span>where the concern is to approximate a complicated state estimate feedback controller obtained from the above two steps by a simpler one - complication usually being measured by the
+                            state dimension;
+                        </li>
+                        <li class="itemize"><span class="cmti-10">implementation of the controller </span>where the controller has to be approximated in discrete-time to be implemented on physical hardware.</li>
+                    </ul>
+                    <p>
+                        The first part of the course assumes precise knowledge of the structure and parameters of the dynamic systems investigated and precise measurements of the states for feedback control. In practice, such precise knowledge is seldom
+                        available. Thus, it is important to be able to deal with random fluctuations in the environment and in the measurement system. The second part of the course thus is concerned with this topic, starting with a review of the fundamentals
+                        of probability and random processes and proceeding to the design of the ”best” control system, on the average, using noisy measurements and taking into account random perturbations of the system by the environment.
+                    </p>
+
+                </div>
+            </div>
+
+            <footer class="fixed-bottom-footer">
+                <div class="w3-container w3-theme-l1">
+                    <p>&copy; Copyright 2020 <a href="https://polimechatronics.github.io/" target="_blank">Mechatronic Systems and Laboratory</a> course at <a href="https://polimi.it/" target="_blank">Politecnico di Milano</a></p>
+                </div>
+        </footer>
+
+            <!-- END MAIN -->
+        </div>
+
+        <script src="https://hypothes.is/embed.js" async></script>
+
+        <script>
+            // Get the Sidebar
+            var mySidebar = document.getElementById("mySidebar");
+
+            // Get the DIV with overlay effect
+            var overlayBg = document.getElementById("myOverlay");
+
+            // Toggle between showing and hiding the sidebar, and add overlay effect
+            function w3_open() {
+                if (mySidebar.style.display === "block") {
+                    mySidebar.style.display = "none";
+                    overlayBg.style.display = "none";
+                } else {
+                    mySidebar.style.display = "block";
+                    overlayBg.style.display = "block";
+                }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+                overlayBg.style.display = "none";
+            }
+        </script>
+    </body>
+</html>

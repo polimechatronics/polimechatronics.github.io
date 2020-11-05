@@ -265,3 +265,14 @@ a.anchor-text {
     top: -43px;
     visibility: hidden;
 }
+
+.fixed-bottom-footer {
+    z-index: 5;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.chapter-link {
+    text-decoration: none;
+}
